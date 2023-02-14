@@ -1,7 +1,4 @@
-﻿/*Console.WriteLine(10);
-double num1 = new Random().Next(1,100);
-Console.WriteLine(num1);*/
-
+﻿/*
 Console.Clear();
 int
    xa = 100, ya = 1,
@@ -45,4 +42,8 @@ while (count < 100000)
     Console.WriteLine("+");
     count++;
 
-}
+}*/
+
+Console.WriteLine(10);
+double num1 = new Random().Next(1, 100);
+Console.WriteLine(num1);
