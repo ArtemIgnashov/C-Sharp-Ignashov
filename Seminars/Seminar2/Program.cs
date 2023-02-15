@@ -42,8 +42,72 @@ while (count < 100000)
     Console.WriteLine("+");
     count++;
 
-}*/
+}
+*/
 
+/*
+Console.WriteLine("Введтите число, а я выведу нужную цифру: ");
+//double num1 = new Random().Next(1, 100);
+Console.ReadLine();
+
+int[] num = Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine("введи какую по счету вывести цифру: ");
 Console.WriteLine(10);
 double num1 = new Random().Next(1, 100);
 Console.WriteLine(num1);
+
+*/
+
+
+void Fill(int[] coll)
+
+{
+    int length = coll.Length;
+    int index = 0;
+    while (index < length)
+    {
+        coll[index] = new Random().Next(1, 10);
+        index++;
+    }
+}
+
+void Print(int[] collection)
+{
+    int count = collection.Length;
+    int position = 0;
+    while (position < count)
+    {
+        Console.Write(collection[position] + " ");
+        position++;
+    }
+}
+
+int IndexOf(int[] coll, int find)
+{
+    int count = coll.Length;
+    int index = 0;
+    int position = -1;
+    while (index < count)
+    {
+        if (coll[index] == find)
+        {
+            position = index;
+            break;
+        }
+        index++;
+
+    }
+    return position;
+}
+
+
+int[] array = new int[10];
+
+Fill(array);
+Print(array);
+
+Console.WriteLine();
+
+int pos = IndexOf(array, 4);
+Console.WriteLine(pos);
