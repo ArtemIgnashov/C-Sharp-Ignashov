@@ -58,7 +58,7 @@ double num1 = new Random().Next(1, 100);
 Console.WriteLine(num1);
 
 */
-
+/* лекция 
 
 void Fill(int[] coll)
 
@@ -111,3 +111,100 @@ Console.WriteLine();
 
 int pos = IndexOf(array, 4);
 Console.WriteLine(pos);
+*/
+
+// семинар 2 
+/*
+int CutNumber(int number)    // мы написали метод который не работает без return  и делает то что на входе у него number трехзначное число у когорого удаляется второй знак
+{
+    int sot = number / 100;
+    int ed = number % 10;
+    int result = sot * 10 + ed;
+    return result;             // return это возврат перевенной можно сказать выход из метода
+
+}
+
+bool isEven(int numb)
+{
+    if (numb % 2 == 0)
+        return true;
+    else
+        return false;     // в этом методе представленно два выхода из методп с использованием bool (все задачи где ответ да или нет)
+}
+
+
+//if (a > 0 && a % 2 == 0) состовное услоовие
+int RandNamber = new Random().Next(100, 1000);
+
+int newnumber = CutNumber(RandNamber);
+
+Console.Write("рандомное трехзначное число :");
+Console.WriteLine(RandNamber);
+Console.Write("Удаляем вторую цифру :");
+Console.WriteLine(newnumber);
+*/
+
+// Задача 1
+/*
+int compare(int numb)
+{
+    int first = numb / 10;
+    int second = numb % 10;
+    int max = Math.Max(first, second);
+    return max;
+}
+
+int RandNumber = new Random().Next(10, 100);
+
+int newNumber = compare(RandNumber);
+
+Console.Write($"наибольшая цифра двухзначного числа {RandNumber} является {newNumber}");
+*/
+
+// Задача 2
+//Напишите программу, которая будет принимать на вход два числа и выводить, является ли второе число кратным первому.
+/*
+bool multiplicity(int numb, int numb2)
+{
+    int mult = numb2 % numb;
+    if (mult == 0)
+        return true;
+    else
+        return false;
+}
+
+Console.WriteLine("Напишите два числа, для проверки является ли второе число кратно первому ");
+
+Console.Write("Напишите первое число: ");
+int first = Convert.ToInt32(Console.ReadLine());
+
+Console.Write("Напишите второе число: ");
+int second = Convert.ToInt32(Console.ReadLine());
+
+bool result = multiplicity(first,second);
+Console.WriteLine($"ответ {result}");
+*/
+
+// Задача 3 
+//Напишите программу, которая принимает на вход два числа и проверяет, является ли одно число квадратом другого.
+
+bool square(int num1, int num2)
+{
+    if (num1 * num1 == num2 || num2 * num2 == num1)
+        return true;
+    else
+        return false;
+
+}
+
+Console.WriteLine("Напишите два числа, для проверки является ли одно число квадратом другого");
+
+Console.Write("Напишите первое число: ");
+int first = Convert.ToInt32(Console.ReadLine());
+
+Console.Write("Напишите второе число: ");
+int second = Convert.ToInt32(Console.ReadLine());
+
+bool result = square(first,second);
+Console.WriteLine($"result {result}");
+
