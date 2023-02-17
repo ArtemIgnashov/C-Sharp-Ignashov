@@ -20,7 +20,7 @@ int num = Convert.ToInt32(Console.ReadLine());
 //int leng1= num.Length;
 
 
-void Fill(int[] coll)
+/*void Fill(int[] coll)
 
 {
     int length = coll.Length;
@@ -34,3 +34,4 @@ void Fill(int[] coll)
 
 
 Console.WriteLine(num);
+*/
