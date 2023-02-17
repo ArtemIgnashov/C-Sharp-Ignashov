@@ -14,7 +14,7 @@ tasks.json
 *.vscode
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
-
+*.csproj
 # Mono auto generated files
 mono_crash.*
 
