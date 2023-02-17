@@ -187,7 +187,7 @@ Console.WriteLine($"ответ {result}");
 
 // Задача 3 
 //Напишите программу, которая принимает на вход два числа и проверяет, является ли одно число квадратом другого.
-
+/*
 bool square(int num1, int num2)
 {
     if (num1 * num1 == num2 || num2 * num2 == num1)
@@ -207,4 +207,4 @@ int second = Convert.ToInt32(Console.ReadLine());
 
 bool result = square(first,second);
 Console.WriteLine($"result {result}");
-
+*/
