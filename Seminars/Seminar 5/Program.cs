@@ -205,19 +205,14 @@ int[] CreateArray(int size) //метод для ввода данный вруч
     return array;
 }
 
-void quest(int[] array, int n)// метод поиска числа в массиве
+bool Quest(int[] array, int n)// метод поиска числа в массиве
 {
-    int count = 0;
     for (int i = 0; i < array.Length; i++)
-    {
-        if (array[i] == n)
-        {
-            Console.WriteLine($"элемент под номером {i + 1} равен искомому числу: {n} ");
-            count++;
-        }
-    }
-    if (count == 0) Console.WriteLine("искомого элемента нет");
+        if (array[i] == n) return true;
+    return false;
 }
+
+
 
 void Srowarray(int[] array) // метод для вывода на экран массива
 {
@@ -237,7 +232,8 @@ Console.WriteLine("введите искомое число:  ");
 int Num = Convert.ToInt32(Console.ReadLine());
 
 
-quest(newArray, Num);
+if (Quest(newArray, Num) == true) Console.WriteLine($"искомое число: {Num} присутствует в массиве ");
+else Console.WriteLine("искомого элемента нет");
 */
 
 //Задача 4
@@ -260,18 +256,20 @@ void Srowarray(int[] array) // метод для вывода на экран м
     Console.WriteLine();
 }
 
-void quest(int[] array, int a, int b)// определить кол-во элементов, принадлежащих отрезку [a,b]
+int Quest(int[] array, int a, int b)// определить кол-во элементов, принадлежащих отрезку [a,b]
 {
+    if (a > b)
+    {
+        int temp = a;
+        a = b;
+        b = temp;
+    }
     int count = 0;
     for (int i = 0; i < array.Length; i++)
     {
-        if (array[i] <= b && array[i] >= a)
-        {
-    Console.WriteLine($"элемент [ {array[i]} ] под номером {i + 1} входит в диапазон: [{a}, {b}]");
-    count++;
-}
+        if (array[i] <= b && array[i] >= a) count++;
     }
-    if (count == 0) Console.WriteLine($"элементов входящих в диапазон: [{a}, {b}] не найдено");
+    return count;
 }
 
 
@@ -293,7 +291,10 @@ int A = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("введите B:  ");
 int B = Convert.ToInt32(Console.ReadLine());
 
-quest(newArray,A,B);
-
+int result = Quest(newArray, A, B);
+if (result == 0)
+    Console.WriteLine($"в диапозонt [{A},{B}] элементов массива не найденно!");
+else
+    Console.WriteLine($"колличество элементов входящих в диапозон [{A},{B}] равняется: {result} ");
 
 
