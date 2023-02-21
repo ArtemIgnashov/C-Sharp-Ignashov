@@ -66,6 +66,7 @@ Power(y);
 //Задача 3
 //Напишите программу, которая принимает на вход координаты двух точек 
 //и находит расстояние между ними в 2D пространстве.
+/*
 
 double hypotenuse(double xa, double ya, double xb, double yb)
 {
@@ -83,4 +84,4 @@ Console.Write("yb: ");
 double yb = Convert.ToDouble(Console.ReadLine());
 
 Console.WriteLine("Длинна отрезка равна " + Math.Round(hypotenuse(xa, ya, xb, yb),2));
-
+*/
