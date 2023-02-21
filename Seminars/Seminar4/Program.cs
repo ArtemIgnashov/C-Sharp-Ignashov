@@ -1,4 +1,5 @@
 ﻿// Семинар 4 
+
 // Задача 1 
 //Напишите программу, которая принимает на вход число (А) и выдаёт сумму чисел от 1 до А.
 
@@ -67,6 +68,7 @@ Console.WriteLine(result);
 
 // Массивы
 
+/*
 int[] CreateRondomArray(int size, int minValue, int maxValue) // создали метод для создания рандомного массива
 {
     int[] array = new int[size]; // выделить память под массив размером size
@@ -93,3 +95,4 @@ int max = Convert.ToInt32(Console.ReadLine());
 int[] newArray = CreateRondomArray(size, min, max);
 Srowarray (newArray); // в метод отправляется массив целиком
 
+*/
