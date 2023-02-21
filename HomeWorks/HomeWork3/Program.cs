@@ -1,33 +1,50 @@
 ﻿// Задача 19 
 // Напишите программу, которая принимает на вход число и проверяет, является ли оно палиндромом.
 
-double function(double num1)
+/*
+int function(int num)
 {
-    double curr = 10;
-    double y = 1;
-    double num2 = (num1 % curr)*(Math.Pow(10,((num1.ToString().Length)-y)));
+    int n = 0;
 
-
-    while (num2.ToString().Length <= num1.ToString().Length)
+    while (num != 0)
     {
-        num2 = num2 + (num1 % curr)*(Math.Pow(10,((num1.ToString().Length)-y)));
-        curr = curr * 10;
-        y--; 
-        Console.WriteLine(num1 + "   " + num2);
+        n = n * 10 + num % 10;
+        num = num / 10;
     }
-return num2;
+    return n;
+}
 
-
-
+bool polin(int num1, int num2)
+{
+    if (num1 == num2)
+    {
+        Console.WriteLine("число ясвляется полиндромом!");
+        return true;
+    }
+    else
+    {
+        Console.WriteLine("число НЕ ясвляется полиндромом!");
+        return false;
+    }
 }
 
 
-Console.WriteLine("введите число мы проверим полиндром ли оно: ");
-int num2 = Convert.ToInt32(Console.ReadLine());
 
-Console.WriteLine(function(num2));
+Console.WriteLine("введите число: ");
+
+int Num = Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine("отраженное число: ");
+
+int result = function(Num);
+
+Console.WriteLine(result);
+
+Console.WriteLine(polin(Num, result));
+*/
 
 
-//num1.ToString().Length);
+
+
 
 
