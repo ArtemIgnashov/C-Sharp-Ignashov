@@ -32,13 +32,11 @@ Console.WriteLine(result);
 /*
 int sum(int num)
 {
-    int count = 1;
     int n = 0;
     while (num != 0)
     {
         n = n + num % 10;
         num = num / 10;
-        count++;
     }
     return n;
 }
@@ -51,6 +49,7 @@ int result = sum(Num);
 
 Console.WriteLine(result);
 */
+
 // Задача 29 
 
 // Напишите программу, которая задаёт массив из m элементов и выводит их на экран.
