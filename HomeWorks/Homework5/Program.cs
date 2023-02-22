@@ -110,25 +110,18 @@ void ShowDoubleArray(double[] array) // метод для вывода на эк
     Console.WriteLine();
 }
 
-int[] change1(int[] array)// метод заменяющий отрицательные элементы на положительные
+double Difference(double[] array)// метод разницы между максимальным и минимальным элементом массива
 {
+    double max = array[1];
+    double min = array[1];
+    double diff = 0;
     for (int i = 0; i < array.Length; i++)
     {
-        if (array[i] < 0) array[i] *= -1;
+        if (max < array[i]) max = array[i];
+        if (min > array[i]) min = array[i];
     }
-    return array;
-}
-
-int quantity(int num) // метод кол ва цифр в числе
-{
-    int count = 1;
-
-    while (num != 0)
-    {
-        num = num / 10;
-        count++;
-    }
-    return count;
+    diff = max - min;
+    return diff;
 }
 
 int[] CreateRondomArray(int size, int minValue, int maxValue) // метод для создания рандомного массива
@@ -143,53 +136,45 @@ int[] CreateRondomArray(int size, int minValue, int maxValue) // метод дл
 
 double[] CreateRemArray(int size) // метод для создания рандомного массива остатков
 {
-    double[] array = new double [size]; // выделить память под массив размером size
+    double[] array = new double[size]; // выделить память под массив размером size
 
     for (int index = 0; index < size; index++)
-        array[index] = Math.Round(new Random().NextDouble(),4);
+        array[index] = Math.Round(new Random().NextDouble(), 4);
 
     return array;
 }
 
-double[] CreateDoubleArray(int size, int[] array1, int[] array2) // метод для создания рандомного массива double
+double[] CreateDoubleArray(int size, int[] array1, double[] array2) // метод для создания рандомного массива double
 {
     double[] array = new double[size];
 
     for (int i = 0; i < array1.Length; i++)
-        array[i] = array1[i] + (array2[i] / Math.Pow(10, (quantity(array2[i]))));
+        array[i] = array1[i] + (array2[i]);
     return array;
 }
 
-
-
 Console.WriteLine("введите размер массива:  ");
 int size = Convert.ToInt32(Console.ReadLine());
-/*
+
 Console.WriteLine("введите минимальвый элемент массива целых чисел:  ");
 int min = Convert.ToInt32(Console.ReadLine());
 
 Console.WriteLine("введите максимальный элемент массива целых чисел:  ");
 int max = Convert.ToInt32(Console.ReadLine());
 
-Console.WriteLine("введите минимальвый элемент массива дробных чисел:  ");
-int min1 = Convert.ToInt32(Console.ReadLine());
-
-Console.WriteLine("введите максимальный элемент массива дробных чисел:  ");
-int max1 = Convert.ToInt32(Console.ReadLine());
-*/
-
-
-double[] newArray = CreateRemArray(size);
+int[] newArray1 = CreateRondomArray(size, min, max);
 Console.WriteLine("Массив целых чисел: ");
-ShowDoubleArray(newArray);
-
-/*
-double[] newArray1 = CreateRemArray(size, min1, max1);
-Console.WriteLine("Массив дробных чисел: ");
 ShowArray(newArray1);
 
-int[] ResultArray = CreateDoubleArray(size, newArray, newArray1);
-Console.WriteLine("Массив дробных чисел: ");
-ShowArray(ResultArray);*/
+double[] newArray2 = CreateRemArray(size);
+Console.WriteLine("Массив дробных  чисел: ");
+ShowDoubleArray(newArray2);
+
+double[] ResultArray = CreateDoubleArray(size, newArray1, newArray2);
+Console.WriteLine("Массив вещественных чисел: ");
+ShowDoubleArray(ResultArray);
+
+double result = Difference(ResultArray);
+Console.WriteLine($"Разница между максимальным и минимальным элементом массива равняется = {result} ");
 
 
