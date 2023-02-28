@@ -25,17 +25,10 @@ Console.WriteLine($"колличество чисел больше нуля :{re
 
 //Задача 43: 
 //Напишите программу, которая найдёт точку пересечения двух прямых,
-// заданных уравнениями y = k1 * x + b1, y = k2 * x + b2; значения b1, k1, b2 и k2 задаются пользователем.
-
+// заданных уравнениями y = k1 * x + b1, y = k2 * x + b2; 
+//значения b1, k1, b2 и k2 задаются пользователем.
 //b1 = 2, k1 = 5, b2 = 4, k2 = 9 -> (-0,5; -0,5)
 
-double lineIntersection(double k1, double b1, double k2, double b2)
-{
-    double y=0;
-    double x=0;
-    if 
-    //Math.Sqrt(Math.Pow(xa - xb, 2) + Math.Pow(ya - yb, 2)+ Math.Pow(za - zb, 2));
-}
 
 
 
@@ -51,5 +44,50 @@ double k2 = Convert.ToDouble(Console.ReadLine());
 Console.Write("Введите b2: ");
 double b2 = Convert.ToDouble(Console.ReadLine());
 
+bool Зarallelism(double k1, double b1, double k2, double b2)
+{
+    return (k1 == k2 & b1 != b2);
+}
 
-Console.WriteLine("Длинна отрезка равна " + Math.Round(hypotenuse(xa, ya, za, xb, yb, zb),2));
+bool Overlap(double k1, double b1, double k2, double b2)
+{
+    return (k1 == k2 & b1 == b2);
+}
+
+double result(double k1, double b1, double k2, double b2)
+{
+    double x = (b2 - b1) / (k1 - k2);
+    double y = k1 * x + b1;
+    return x;
+}
+
+double result2(double k1, double b1, double k2, double b2)
+{
+    double x = (b2 - b1) / (k1 - k2);
+    double y = k1 * x + b1;
+    return y;
+}
+
+
+
+if (Зarallelism(k1, b1, k2, b2) )
+{
+    Console.WriteLine("Прямые паралельны. ");
+}
+else if ( Overlap(k1, b1, k2, b2))
+{
+    Console.WriteLine("Прямые совпали. ");
+}
+else
+{
+    double resx = (result(k1, b1, k2, b2));
+    double resy = (result2(k1, b1, k2, b2));
+    Console.WriteLine($"Точка пересечения прямых {resx}  {resy}");
+}
+
+
+
+
+
+
+
