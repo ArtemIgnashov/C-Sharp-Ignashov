@@ -3,6 +3,7 @@
 // Задача 47. Задайте двумерный массив размером m×n, 
 //заполненный случайными вещественными числами.
 
+/*
 int[,] CreateRandon2dArray(int rows, int colums, int minValue, int maxValue) //метод генирации массива 2D
 {
     int[,] array = new int[rows, colums];
@@ -72,11 +73,12 @@ ShowDoubleArray2D(newArray1);
 
 double[,] resultarray = CreateRemArray(rows, colums, newArray, newArray1);
 ShowDoubleArray2D(resultarray);
-
+*/
 
 //Задача 50. Напишите программу, которая на вход принимает позиции 
 //элемента в двумерном массиве, и возвращает значение этого элемента 
 //или же указание, что такого элемента нет.
+
 
 int[,] CreateRandon2dArray() //метод генирации массива 2D
 {
@@ -91,6 +93,7 @@ int[,] CreateRandon2dArray() //метод генирации массива 2D
 
     Console.WriteLine("введите максимальное значение:  ");
     int maxValue = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine();
 
     int[,] array = new int[rows, colums];
     for (int i = 0; i < rows; i++)
@@ -110,26 +113,40 @@ void ShowArray2D(int[,] array) // метод вывода масива 2D
     Console.WriteLine();
 }
 
-int ReturnValue(int[,] array) // метод нахождения элемента
+int ReturnValue(int[,] array, int num1, int num2) // метод нахождения элемента
 {
+    int res = 0;
     for (int i = 0; i < array.GetLength(0); i++)
         for (int j = 0; j < array.GetLength(1); j++)
             if (i < array.GetLength(0) & j < array.GetLength(1))
-                return array[num1, num2];
+                res = array[num1, num2];
+    return res;
 }
 
-Console.WriteLine("введите номер эл-та:  ");
-Console.WriteLine("введите стоку:  ");
-int num1 = Convert.ToInt32(Console.ReadLine());
-
-Console.WriteLine("введите столбец:  ");
-int num2 = Convert.ToInt32(Console.ReadLine());
+bool task(int[,] array, int num1, int num2)
+{
+    return (num1 < array.GetLength(0) & num2 < array.GetLength(1));
+}
 
 int[,] newArray = CreateRandon2dArray();
 ShowArray2D(newArray);
 
-if (ReturnValue(newArray)) Console.WriteLine($"элемент под номером {num1}  {num2} = {result}");
+Console.WriteLine("введите номер искомого эл-та:  ");
+Console.WriteLine("введите стоку:  ");
+int num1 = Convert.ToInt32(Console.ReadLine()) - 1;
+
+Console.WriteLine("введите столбец:  ");
+int num2 = Convert.ToInt32(Console.ReadLine()) - 1;
+
+
+
+if (task(newArray, num1, num2))
+{
+    int result = ReturnValue(newArray, num1, num2);
+    Console.WriteLine($"элемент под номером ({num1 + 1};{num2 + 1}) = {result}");
+}
+else Console.WriteLine($"Элемент ({num1 + 1};{num2 + 1}) не входит в массив ");
 
 //Задача 52. Задайте двумерный массив из целых чисел. 
 //Найдите среднее арифметическое элементов в каждом столбце.
-
+//else Console.WriteLine("Элемент не входит в массив ");
