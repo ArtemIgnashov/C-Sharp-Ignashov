@@ -100,6 +100,7 @@ int[,] CreateRandon2dArray() //метод генирации массива 2D
 
     Console.WriteLine("введите максимальное значение:  ");
     int maxValue = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine();
 
     int[,] array = new int[rows, colums];
     for (int i = 0; i < rows; i++)
@@ -110,8 +111,8 @@ int[,] CreateRandon2dArray() //метод генирации массива 2D
 
 int[,] ChangeArray(int[,] array)
 {
-    for (int i = 0; i < (array.GetUpperBound(0) + 1); i++)
-        for (int j = 0; j < array.Length / (array.GetUpperBound(0) + 1); j++)
+    for (int i = 0; i < (array.GetLength(0)); i++)
+        for (int j = 0; j < array.Length / (array.GetLength(1)); j++)
             if (i % 2 == 0 & j % 2 == 0)
                 array[i, j] = array[i, j] * array[i, j];
     return array;
