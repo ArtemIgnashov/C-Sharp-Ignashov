@@ -213,7 +213,7 @@ int[] array = AverageValue(newArray);
 Showarray(array);
 */
 
-
+/*
 int[,] CreateRandon2dArray() //метод генирации массива 2D
 {
     Console.WriteLine("введите кол-во строк:  ");
@@ -252,7 +252,7 @@ void ShowArray2D(int[,] array) // метод вывода масива 2D
 double[] AverageValue(int[,] array1) // метод нахождения среднего арифметического в столбцах
 {
     double[] average = new double[array1.GetLength(1)];
-    double[] sum = {0};
+    double sum = 0;
     for (int i = 0; i < array1.GetLength(1); i++)
         for (int j = 0; j < array1.GetLength(0); j++)
             sum = sum + array1[j, i];
@@ -275,4 +275,4 @@ for (int i = 0; i < 4; i++)
 
 int[,] newArray = CreateRandon2dArray();
 ShowArray2D(newArray);
-
+*/
