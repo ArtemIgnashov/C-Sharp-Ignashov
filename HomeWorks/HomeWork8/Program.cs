@@ -220,6 +220,7 @@ int[,] MatrixMultiplication(int[,] array, int[,] array2)
     return multiMatrix;
 }
 
+/*
 int[,] MatrixMultiplication1(int[,] matrixA, int[,] matrixB)
 {
     if (matrixA.GetLength(1) != matrixB.GetLength(0))
@@ -244,14 +245,13 @@ int[,] MatrixMultiplication1(int[,] matrixA, int[,] matrixB)
 
     return matrixC;
 }
+*/
 
+//int[,] arrayA = { { 2, 4 }, { 3, 2 } };
+//int[,] arrayB = { { 3, 4 }, { 3, 3 } };
 
-
-int[,] arrayA = { { 2, 4 }, { 3, 2 } };
-int[,] arrayB = { { 3, 4 }, { 3, 3 } };
-
-//int[,] arrayA = CreateRandom2DArray();
-//int[,] arrayB = CreateRandom2DArray();
+int[,] arrayA = CreateRandom2DArray();
+int[,] arrayB = CreateRandom2DArray();
 
 ShowArray2D(arrayA);
 ShowArray2D(arrayB);
